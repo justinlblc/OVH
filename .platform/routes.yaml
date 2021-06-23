@@ -5,7 +5,7 @@
 
 "https://{default}/":
     type: upstream
-    upstream: "test:http"
+    upstream: "app:http"
 
 "https://www.{default}/":
     type: redirect
