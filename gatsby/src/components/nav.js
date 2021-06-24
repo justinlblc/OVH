@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 
+//home page
+
 const Nav = () => (
   <div>
     <div>
