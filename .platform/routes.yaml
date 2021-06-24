@@ -3,10 +3,19 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
-"https://{default}/":
-    type: upstream
-    upstream: "app:http"
-
 "https://www.{default}/":
+    type: upstream
+    upstream: "gatsby:http"
+
+"https://{default}/":
     type: redirect
-    to: "https://{default}/"
+    to: "https://www.{default}/"
+
+"https://www.backend.{default}/":
+    type: upstream
+    upstream: "strapi:http"
+
+"https://backend.{default}/":
+    type: redirect
+    id: 'strapi'
+    to: "https://www.backend.{default}/"
