@@ -1,9 +1,10 @@
 import React from "react"
 
 const Account = () => (
-  <div>
-    <p>This is going to be a protected route.</p>
-  </div>
+    <nav>
+      <Link to="/{default}">Home</Link>{" "}
+    </nav>
+   
 )
 
 export default Account
