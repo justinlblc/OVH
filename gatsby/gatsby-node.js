@@ -24,16 +24,21 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.errors) {
     throw result.errors
   }
-  //account page
   if (page.path.match(/^\/account/)) {
     page.matchPath = "/account/*"
 
+    // Update the page.
     createPage(page)
   }
   // Create blog articles pages.
   const articles = result.data.articles.edges
   const categories = result.data.categories.edges
+  // Account Page
 
+  createPag({
+    path: `/account`,
+    component: require.resolve("./src/component")
+  })
   articles.forEach((article, index) => {
     createPage({
       path: `/account/article/${article.node.strapiId}`,
