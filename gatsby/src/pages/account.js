@@ -1,13 +1,9 @@
 import React from "react"
 
-const Account = () => {
-    return (
-    <>
-    <head>Account Page</head>
-    <p>
-      <Link to="https://www.{default}/">Home</Link>
-    </p>
-    </>
-  )
-}
+const Account = () => (
+  <div>
+    <p>This is going to be a protected route.</p>
+  </div>
+)
+
 export default Account
