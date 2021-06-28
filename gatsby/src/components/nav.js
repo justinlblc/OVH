@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
+import { isLoggedIn, logout } from "../services/auth"
 
 //home page
 
