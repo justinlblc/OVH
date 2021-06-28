@@ -45,19 +45,6 @@ const Nav = () => (
             />
           </ul>
         </div>
-        <div>
-        {isLoggedIn() ? (
-          <a
-            href="/"
-            onClick={event => {
-              event.preventDefault()
-              logout(() => navigate(`/login`))
-            }}
-          >
-            Logout
-          </a>
-        ) : null}
-        </div>
       </nav>
     </div>
   </div>

@@ -8,7 +8,6 @@ import ArticlesComponent from "../components/articles"
 import "../assets/css/main.css"
 
 const IndexPage = () => (
-  <p> {isLoggedIn()? ( 
   <Layout>
     <StaticQuery
       query={graphql`
@@ -40,12 +39,6 @@ const IndexPage = () => (
       )}
     />
   </Layout>
-  ) : (
-    <Layout>
-      You should <Link to="/login">log in</Link> to see restricted content
-    </Layout>
-  )}
-  </p>
 )
 
 export default IndexPage
