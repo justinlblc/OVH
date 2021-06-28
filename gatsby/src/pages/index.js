@@ -32,11 +32,8 @@ const IndexPage = () => (
       render={data => (
         <div className="uk-section">
           <div className="uk-container uk-container-large">
-            <h1>Strapi blog</h1>
-            <p>
-            You are logged in, so check your{" "}
+            <h1>Strapi blog: You are logged in, so check your{" "}</h1>
             <Link to="/profile">profile</Link>
-            </p>
             <ArticlesComponent articles={data.allStrapiArticle.edges} />
           </div>
         </div>
@@ -45,7 +42,7 @@ const IndexPage = () => (
   </Layout>
   ) : (
     <Layout>
-      You should <Link to="/app/login">log in</Link> to see restricted content
+      You should <Link to="/login">log in</Link> to see restricted content
     </Layout>
   )}
   </p>
