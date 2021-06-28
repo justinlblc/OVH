@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
     page.matchPath = "/account/*"
 
     createPage(page)
-
+  }
   // Create blog articles pages.
   const articles = result.data.articles.edges
   const categories = result.data.categories.edges
