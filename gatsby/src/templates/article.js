@@ -44,9 +44,6 @@ const Article = ({ data }) => {
           </div>
         </div>
       </div>
-      <div>
-        <h3> Comment section coming below soon</h3>
-      </div>
     </Layout>
   )
 }
