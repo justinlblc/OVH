@@ -1,4 +1,4 @@
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, page, actions }) => {
   const { createPage } = actions
   const result = await graphql(
     `
@@ -22,6 +22,12 @@ exports.createPages = async ({ graphql, actions }) => {
   )
   if (result.errors) {
     throw result.errors
+  }
+  if (page.path.match(/^\/account/)) {
+    page.matchPath = "/account/*"
+
+    // Update the page.
+    createPage(page)
   }
   
   // Create blog articles pages.
