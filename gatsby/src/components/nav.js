@@ -34,7 +34,7 @@ const Nav = () => (
                 data.allStrapiCategory.edges.map((category, i) => {
                   return (
                     <li key={category.node.strapiId}>
-                      <Link to={`/category/${category.node.strapiId}`}>
+                      <Link to={`/account/category/${category.node.strapiId}`}>
                         {category.node.name}
                       </Link>
                     </li>

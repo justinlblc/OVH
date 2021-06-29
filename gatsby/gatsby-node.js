@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
  
   articles.forEach((article, index) => {
     createPage({
-      path: `/article/${article.node.strapiId}`,
+      path: `/account/article/${article.node.strapiId}`,
       component: require.resolve("./src/templates/article.js"),
       context: {
         id: article.node.strapiId,
@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   categories.forEach((category, index) => {
     createPage({
-      path: `/category/${category.node.strapiId}`,
+      path: `/account/category/${category.node.strapiId}`,
       component: require.resolve("./src/templates/category.js"),
       context: {
         id: category.node.strapiId,
