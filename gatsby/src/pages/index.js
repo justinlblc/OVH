@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import ArticlesComponent from "../components/articles"
 
 import "../assets/css/main.css"
+import {Link} from "gatsby"
 
 export default () => (
     <div>
