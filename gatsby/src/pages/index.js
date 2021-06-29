@@ -8,32 +8,9 @@ import "../assets/css/main.css"
 
 export default () => (
   <Layout>
-    <StaticQuery
-      query={graphql`
-        query {
-          allStrapiArticle {
-            edges {
-              node {
-                strapiId
-                title
-                category {
-                  name
-                }
-                image {
-                  publicURL
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <div className="uk-section">
-          <div className="uk-container uk-container-large">
-            <ArticlesComponent articles={data.allStrapiArticle.edges} />
-          </div>
-        </div>
-      )}
-    />
+    <div>
+    <p>Hello Gatsby!</p>
+    <Link to="/account">Go to your account</Link>
+  </div>
   </Layout>
 )

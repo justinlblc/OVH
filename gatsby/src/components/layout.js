@@ -10,7 +10,6 @@ const Layout = ({ children }) => {
       <Seo />
       <Nav />
       <main>{children}</main>
-      <h1>Titre</h1>
     </>
   )
 }
