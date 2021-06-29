@@ -1,7 +1,16 @@
 import React from "react"
 import {Link} from "gatsby"
+import { Router } from "@reach/router"
+import { login, isAuthenticated } from "../utils/auth"
 
-const Account = () => (
+const Account = () => {
+  if (!isAuthenticated()) {
+    login()
+    return <p>Redirecting to login...</p>
+  }
+
+
+return (
   <>
   <nav>
     <Link to="/">Come back to Home Page</Link>{" "}
@@ -12,5 +21,5 @@ const Account = () => (
   </div>
   </>
 )
-
+}
 export default Account
