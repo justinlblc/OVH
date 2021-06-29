@@ -6,7 +6,7 @@ import ArticlesComponent from "../components/articles"
 
 import "../assets/css/main.css"
 
-const Account = () => (
+export default () => (
   <Layout>
     <StaticQuery
       query={graphql`
@@ -37,5 +37,3 @@ const Account = () => (
     />
   </Layout>
 )
-
-export default Account
