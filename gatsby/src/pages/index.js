@@ -7,9 +7,9 @@ import {Link} from "gatsby"
 
 import "../assets/css/main.css"
 
-export default () => (  
+export default () => (
      <div>
-      <p>Hello Gatsby!</p>
+      <p>Welcome to DealExMachina Website!</p>
       <Link to="/account">Go to your account</Link>
     </div>
 )
