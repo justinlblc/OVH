@@ -9,7 +9,7 @@ import "../assets/css/main.css"
 
 export default () => (
      <div>
-      <p>Welcome to DealExMachina Website!</p>
+      <p>Welcome</p>
       <Link to="/account">Go to your account</Link>
     </div>
 )
