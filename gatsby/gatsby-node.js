@@ -50,13 +50,3 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions
-  // page.matchPath is a special key that's used for matching pages
-  // only on the client.
-  if (page.path.match(/^\/acount/)) {
-    page.matchPath = "/account/*"
-    // Update the page.
-    createPage(page)
-  }
-}
