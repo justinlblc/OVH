@@ -11,15 +11,12 @@ const Nav = () => (
           <ul className="uk-navbar-nav">
             <li>
               <Link to="/">Strapi Blog</Link>
+              {` `}
+              <Link to="/">Profile</Link>
+              {` `}
+              <Link to="/">Logout</Link>
             </li>
           </ul>
-        </div>
-        <div>
-        <Link to="/">Profile</Link>
-        </div>
-        <Link to="/">Logout</Link>
-        <div>
-
         </div>
 
         <div className="uk-navbar-right">
