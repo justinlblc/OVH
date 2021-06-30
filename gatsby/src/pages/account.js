@@ -5,15 +5,11 @@ import { login, isAuthenticated } from "../utils/auth"
 
 const Account = () => {
 return (
-  <>
-  <nav>
-    <Link to="/">Come back to Home Page</Link>{" "}
-    <Link to="/account/category/1">The Overview Category</Link>{" "}
-  </nav>
+  <Layout>
   <div>
     <p>This is going to be a protected route.</p>
   </div>
-  </>
+  </Layout>
 )
 }
 export default Account
