@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout.js"
 import { Router } from "@reach/router"
+import PrivateRoute from "../components/privateRoute"
 import Profile from "../components/profile.js"
 import Login from "../components/login.js"
 
@@ -11,7 +12,7 @@ return (
     <p>This is going to be a protected route.</p>
   </div>
   <Router>
-      <Profile path="/account/profile" />
+    <PrivateRoute path="/account/profile" component={Profile} />
       <Login path="/account/login" />
   </Router>
   </Layout>
