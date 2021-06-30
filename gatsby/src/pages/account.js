@@ -4,12 +4,6 @@ import { Router } from "@reach/router"
 import { login, isAuthenticated } from "../utils/auth"
 
 const Account = () => {
-  if (!isAuthenticated()) {
-    login()
-    return <p>Redirecting to login...</p>
-  }
-
-
 return (
   <>
   <nav>

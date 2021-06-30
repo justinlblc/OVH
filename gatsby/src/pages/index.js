@@ -8,8 +8,8 @@ import "../assets/css/main.css"
 
 export default () => (
   
-     <div>
+     <Layout>
       <p>Welcome</p>
       <Link to="/account">Go to your account</Link>
-    </div>
+    </Layout>
 )
