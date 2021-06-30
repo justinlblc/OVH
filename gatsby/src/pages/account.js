@@ -15,6 +15,9 @@ return (
     <PrivateRoute path="/account/profile" component={Profile} />
       <Login path="/account/login" />
   </Router>
+  <div>
+    Bonjour
+  </div>
   </Layout>
 )
 }

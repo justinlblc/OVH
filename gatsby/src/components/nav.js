@@ -13,7 +13,7 @@ const Nav = () => (
               <Link to="/">Strapi Blog</Link>
             </li>
             <li>
-              <Link to="/account/profile">Profile</Link>
+              <Link to="/">Profile</Link>
             </li>
             <li>
               <Link to="/">Log out</Link>
