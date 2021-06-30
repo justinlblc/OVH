@@ -1,7 +1,5 @@
 import React from "react"
-import {Link} from "gatsby"
-import { Router } from "@reach/router"
-import { login, isAuthenticated } from "../utils/auth"
+import { Layout } from "../components/layout.js"
 
 const Account = () => {
 return (
