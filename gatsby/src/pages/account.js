@@ -9,7 +9,7 @@ const Account = () => {
 return (
   <Layout>
   <div>
-    <p>This is going to be a protected route.</p>
+    <p> Welcom to your Accoun!</p>
   </div>
   <Router>
     <PrivateRoute path="/account/profile" component={Profile} />
