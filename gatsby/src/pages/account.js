@@ -9,14 +9,7 @@ const Account = () => {
 return (
   <Layout>
   <div>
-    <p> Welcom to your Accoun!</p>
-  </div>
-  <Router>
-    <PrivateRoute path="/account/profile" component={Profile} />
-      <Login path="/account/login" />
-  </Router>
-  <div>
-    Bonjour
+    <p> Welcome to your Accoun!</p>
   </div>
   </Layout>
 )
