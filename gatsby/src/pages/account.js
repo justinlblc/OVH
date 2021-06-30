@@ -7,6 +7,10 @@ return (
   <div>
     <p>This is going to be a protected route.</p>
   </div>
+  <Router>
+      <Profile path="/account/profile" />
+      <Login path="/account/login" />
+  </Router>
   </Layout>
 )
 }
