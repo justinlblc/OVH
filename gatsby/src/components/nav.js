@@ -10,9 +10,9 @@ const Nav = () => (
           <li>
               <Link to="/">Strapi Blog</Link>
         {` `}
-        <Link to="/account/profile">Profile</Link>
+              <Link to="/account/profile">Profile</Link>
         {` `}
-        <Link to="/">Logout</Link>
+              <Link to="/">Logout</Link>
             </li>
           </ul>
         </div>
