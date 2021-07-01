@@ -1,14 +1,11 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-
-import Layout from "../components/layout"
-import ArticlesComponent from "../components/articles"
-
+import {Link} from "gatsby" 
 import "../assets/css/main.css"
 
 const IndexPage = () => (
   <div>
     <p>Home</p>
+    <Link to="/account">Your account</Link>
   </div>
 )
 
