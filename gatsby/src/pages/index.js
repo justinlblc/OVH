@@ -8,7 +8,7 @@ import "../assets/css/main.css"
 
 const IndexPage = () => (
   <div>
-    <p>Home page</p>
+    <p>Home</p>
   </div>
 )
 
