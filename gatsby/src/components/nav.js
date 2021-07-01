@@ -11,13 +11,6 @@ const Nav = () => (
               <Link to="/">DealExMachina</Link>
               {` `}
           </li>
-          <li>
-              <Link to="/">Profile</Link>
-              {` `}
-          </li>
-          <li>
-              <Link to="/">Log Out</Link>
-          </li>
           </ul>
         </div>
 
@@ -40,7 +33,7 @@ const Nav = () => (
                 data.allStrapiCategory.edges.map((category, i) => {
                   return (
                     <li key={category.node.strapiId}>
-                      <Link to={`/account/category/${category.node.strapiId}`}>
+                      <Link to={`/category/${category.node.strapiId}`}>
                         {category.node.name}
                       </Link>
                     </li>
