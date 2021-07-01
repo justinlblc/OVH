@@ -6,7 +6,7 @@ import "../assets/css/main.css"
 const IndexPage = () => (
   <div>
     <p> Page de Garde</p>
-    <Link to="/account"></Link>
+    <Link to="/account">Account</Link>
   </div>  
     
 )
