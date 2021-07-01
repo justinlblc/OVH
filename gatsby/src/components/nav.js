@@ -8,7 +8,15 @@ const Nav = () => (
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
           <li>
-              <Link to="/">Deal Ex Machina!</Link>
+              <Link to="/">DealExMachina</Link>
+              {` `}
+          </li>
+          <li>
+              <Link to="/">Profile</Link>
+              {` `}
+          </li>
+          <li>
+              <Link to="/">Account</Link>
           </li>
           </ul>
         </div>
@@ -32,7 +40,7 @@ const Nav = () => (
                 data.allStrapiCategory.edges.map((category, i) => {
                   return (
                     <li key={category.node.strapiId}>
-                      <Link to={`/category/${category.node.strapiId}`}>
+                      <Link to={`/account/category/${category.node.strapiId}`}>
                         {category.node.name}
                       </Link>
                     </li>
