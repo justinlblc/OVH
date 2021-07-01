@@ -8,7 +8,7 @@ const Nav = () => (
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
           <li>
-              <Link to="/">Home Page Deal Ex Machina!</Link>
+              <Link to="/">Deal Ex Machina!</Link>
           </li>
           </ul>
         </div>
