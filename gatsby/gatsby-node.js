@@ -23,11 +23,7 @@ exports.createPages = async ({ graphql, page, actions }) => {
   if (result.errors) {
     throw result.errors
   }
-  if (page.path.match(/^\/account/)) {
-    page.matchPath = "/account/*"
-    // Update the page.
-    createPage(page)
-  }
+  
   
   
   // Create blog articles pages.
