@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 
 const Account = () => (
     <Layout>
-        <p> Welcome to yout account!</p>
+        <p> Welcome to yout account! Other feature coming soon</p>
     </Layout>
 )
 
