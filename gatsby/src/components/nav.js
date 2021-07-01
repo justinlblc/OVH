@@ -9,6 +9,10 @@ const Nav = () => (
           <ul className="uk-navbar-nav">
           <li>
               <Link to="/">Strapi Blog</Link>
+        {` `}
+        <Link to="/account/profile">Profile</Link>
+        {` `}
+        <Link to="/">Logout</Link>
             </li>
           </ul>
         </div>
