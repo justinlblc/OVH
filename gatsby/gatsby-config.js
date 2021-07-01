@@ -53,9 +53,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/account/*`] },
-    }
+    
   ],
 }
