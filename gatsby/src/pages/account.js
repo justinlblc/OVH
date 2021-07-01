@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 
 const Account = () => (
   <Layout>
-      <p>Account Page</p>
+      <p>Account</p>
   </Layout>
 )
 
