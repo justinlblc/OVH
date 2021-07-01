@@ -16,7 +16,7 @@ const Nav = () => (
               {` `}
           </li>
           <li>
-              <Link to="/">Account</Link>
+              <Link to="/">Log Out</Link>
           </li>
           </ul>
         </div>
