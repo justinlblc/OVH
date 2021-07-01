@@ -8,9 +8,10 @@ import Login from "../components/login.js"
 const Account = () => {
 return (
   <Layout>
-  <div>
-    <p> Welcome to your Accoun!</p>
-  </div>
+  <Router>
+      <Profile path="/account/profile" />
+      <Login path="/account/login" />
+  </Router>
   </Layout>
 )
 }

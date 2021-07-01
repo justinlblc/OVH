@@ -1,15 +1,13 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 
-//home page
-
 const Nav = () => (
   <div>
     <div>
       <nav className="uk-navbar-container" data-uk-navbar>
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
-            <li>
+          <li>
               <Link to="/">Strapi Blog</Link>
             </li>
             <li>
@@ -40,7 +38,7 @@ const Nav = () => (
                 data.allStrapiCategory.edges.map((category, i) => {
                   return (
                     <li key={category.node.strapiId}>
-                      <Link to={`/account/category/${category.node.strapiId}`}>
+                      <Link to={`/category/${category.node.strapiId}`}>
                         {category.node.name}
                       </Link>
                     </li>
