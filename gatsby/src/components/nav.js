@@ -7,14 +7,8 @@ const Nav = () => (
       <nav className="uk-navbar-container" data-uk-navbar>
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
-          <li>
+            <li>
               <Link to="/">Strapi Blog</Link>
-            </li>
-            <li>
-              <Link to="/account/profile">Profile</Link>
-            </li>
-            <li>
-              <Link to="/">Log out</Link>
             </li>
           </ul>
         </div>
