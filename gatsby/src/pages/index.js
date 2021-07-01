@@ -5,7 +5,7 @@ import "../assets/css/main.css"
 const IndexPage = () => (
   <div>
     <p>Home</p>
-    <Link to="/account">Your account</Link>
+    <Link to="/account">Your account!</Link>
   </div>
 )
 
