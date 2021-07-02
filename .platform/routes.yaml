@@ -3,13 +3,13 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
-"https://www.{default}/":
+"https://www.{default}/account":
     type: upstream
     upstream: "gatsby:http"
 
 "https://{default}/":
     type: redirect
-    to: "https://www.{default}/"
+    to: "https://www.{default}/account"
 
 "https://www.backend.{default}/":
     type: upstream
