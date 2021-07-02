@@ -1,50 +1,41 @@
 import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link, navigate } from "gatsby"
+import { getUser, isLoggedIn, logout } from "../services/auth"
 
-const Nav = () => (
-  <div>
-    <div>
-      <nav className="uk-navbar-container" data-uk-navbar>
-        <div className="uk-navbar-left">
-          <ul className="uk-navbar-nav">
-            <li>
-              <Link to="/">DealExMachina</Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="uk-navbar-right">
-          <ul className="uk-navbar-nav">
-            <StaticQuery
-              query={graphql`
-                query {
-                  allStrapiCategory {
-                    edges {
-                      node {
-                        strapiId
-                        name
-                      }
-                    }
-                  }
-                }
-              `}
-              render={data =>
-                data.allStrapiCategory.edges.map((category, i) => {
-                  return (
-                    <li key={category.node.strapiId}>
-                      <Link to={`/category/${category.node.strapiId}`}>
-                        {category.node.name}
-                      </Link>
-                    </li>
-                  )
-                })
-              }
-            />
-          </ul>
-        </div>
+export default function NavBar() {
+  let greetingMessage = ""
+  if (isLoggedIn()) {
+    greetingMessage = `Hello ${getUser().name}`
+  } else {
+    greetingMessage = "You are not logged in"
+  }
+  return (
+    <div
+      style={{
+        display: "flex",
+        flex: "1",
+        justifyContent: "space-between",
+        borderBottom: "1px solid #d1c1e0",
+      }}
+    >
+      <span>{greetingMessage}</span>
+      <nav>
+        <Link to="/">Home</Link>
+        {` `}
+        <Link to="/account/profile">Profile</Link>
+        {` `}
+        {isLoggedIn() ? (
+          <a
+            href="/"
+            onClick={event => {
+              event.preventDefault()
+              logout(() => navigate(`/account/login`))
+            }}
+          >
+            Logout
+          </a>
+        ) : null}
       </nav>
     </div>
-  </div>
-)
-
-export default Nav  
+  )
+}

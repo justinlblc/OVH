@@ -1,42 +1,26 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
+import { getUser, isLoggedIn } from "../services/auth"
 
 import Layout from "../components/layout"
-import ArticlesComponent from "../components/articles"
 
-import "../assets/css/main.css"
-
-const IndexPage = () => (
-  <Layout>
-    <StaticQuery
-      query={graphql`
-        query {
-          allStrapiArticle {
-            edges {
-              node {
-                strapiId
-                title
-                category {
-                  name
-                }
-                image {
-                  publicURL
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <div className="uk-section">
-          <div className="uk-container uk-container-large">
-            <h1>Strapi blog</h1>
-            <ArticlesComponent articles={data.allStrapiArticle.edges} />
-          </div>
-        </div>
-      )}
-    />
-  </Layout>
-)
-
-export default IndexPage
+export default function Home() {
+  return (
+    <Layout>
+      <h1>Hello {isLoggedIn() ? getUser().name : "world"}!</h1>
+      <p>
+        {isLoggedIn() ? (
+          <>
+            You are logged in, so check your{" "}
+            <Link to="/account/profile">profile</Link>
+          </>
+        ) : (
+          <>
+            You should <Link to="/account/login">log in</Link> to see restricted
+            content
+          </>
+        )}
+      </p>
+    </Layout>
+  )
+}
