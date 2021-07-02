@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 const Home =()  => {
   return (
     <Layout>
-      query{}
       <h1>Hello {isLoggedIn() ? getUser().name : "world"}!</h1>
       <p>
         {isLoggedIn() ? (
