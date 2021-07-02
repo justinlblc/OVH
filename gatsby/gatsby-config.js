@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
     title: "Deal Ex Machina",
+    description: "Deal Ex Machina Website",
+    author: "Deal Ex Machina",
   },
   plugins: ["gatsby-plugin-react-helmet",
   {
