@@ -3,7 +3,7 @@ import { getUser, isLoggedIn } from "../services/auth"
 import {Link} from "gatsby"
 import Layout from "../components/layout"
 
-const Home =()  => {
+ export default function Home() {
   return (
     <Layout>
       <h1>Hello {isLoggedIn() ? getUser().name : "world"}!</h1>
@@ -24,4 +24,3 @@ const Home =()  => {
     </Layout>
   )
 }
-export default Home
