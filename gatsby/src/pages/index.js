@@ -15,7 +15,7 @@ const query = graphql`
     }
   }
 `;
-export default function Home() {
+const Home =()  => {
   return (
     <Layout>
       query{}
@@ -30,19 +30,10 @@ export default function Home() {
           <>
             You should <Link to="/account/login">log in</Link> to see restricted
             content
-            <StaticQuery
-    query={query}
-    render={data => (
-      <ul>
-        {data.allStrapiRestaurant.edges.map(restaurant => (
-          <li key={restaurant.node.strapiId}>{restaurant.node.name}</li>
-        ))}
-      </ul>
-    )}
-  />
           </>
         )}
       </p>
     </Layout>
   )
 }
+export default Home
