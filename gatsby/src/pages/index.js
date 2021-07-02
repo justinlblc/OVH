@@ -1,6 +1,6 @@
 import React from "react"
 import { getUser, isLoggedIn } from "../services/auth"
-
+import {Link} from "gatsby"
 import Layout from "../components/layout"
 
 const Home =()  => {
