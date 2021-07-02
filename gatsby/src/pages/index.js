@@ -1,20 +1,8 @@
 import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
 import { getUser, isLoggedIn } from "../services/auth"
 
 import Layout from "../components/layout"
-const query = graphql`
-  query {
-    allStrapiCategory {
-      edges {
-        node {
-          strapiId
-          name
-        }
-      }
-    }
-  }
-`;
+
 const Home =()  => {
   return (
     <Layout>
