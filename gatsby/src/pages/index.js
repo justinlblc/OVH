@@ -25,6 +25,7 @@ const Home =()  => {
           <>
             You are logged in, so check your{" "}
             <Link to="/account/profile">profile</Link>
+            or go to your <Link to="/account">account</Link> to see all the content available 
           </>
         ) : (
           <>
