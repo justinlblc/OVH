@@ -1,8 +1,12 @@
-# The services of the project.
+# The routes of the project.
 #
-# Each service listed will be deployed
-# to power your Platform.sh project.
+# Each route describes how an incoming URL is going
+# to be processed by Platform.sh.
 
-dbpostgres:
-    type: postgresql:12
-    disk: 256
+"https://www.{default}/":
+    type: upstream
+    upstream: "gatsby:http"
+
+"https://{default}/":
+    type: redirect
+    to: "https://www.{default}/"
