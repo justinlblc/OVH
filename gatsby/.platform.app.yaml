@@ -1,18 +1,36 @@
-# This file describes an application. You can have multiple applications
-# in the same project.
-#
-# See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
+# .platform.app.yaml
 
-# The name of this app. Must be unique within a project.
+# The name of this application, which must be unique within a project.
 name: gatsby
 
-# The runtime the application uses.
-type: nodejs:14
+# The type key specifies the language and version for your application.
+type: 'nodejs:14'
 
-# The configuration of app when it is exposed to the web.
-web:
-  commands:
-    start: "node index.js"
-
+# The hooks that will be triggered when the package is deployed.
+hooks:
+    # Build hooks can modify the application files on disk but not access any services like databases.
+    post_deploy: |
+      npm run build
 # The size of the persistent disk of the application (in MB).
-disk: 512
+disk: 1024
+
+# The configuration of the application when it is exposed to the web.
+web:
+    locations:
+        '/':
+            # The public directory of the application relative to its root.
+            root: 'public'
+            index: ['index.html']
+            scripts: false
+            allow: true
+
+mounts:
+  '/.cache':
+      source: local
+      source_path: cache
+  '/.config':
+      source: local
+      source_path: config
+  'public':
+      source: local
+      source_path: public
