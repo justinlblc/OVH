@@ -12,7 +12,7 @@ const Billing = () => <p>Billing</p>
 const Account = () => {
   if (!isAuthenticated()) {
     login()
-    return <p>Redirecting to login...</p>
+    return <p>Redirecting...</p>
   }
 
   const user = getProfile()
