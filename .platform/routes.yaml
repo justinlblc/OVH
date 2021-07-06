@@ -1,4 +1,4 @@
-"https://www.{default}/account":
+"https://www.{default}/":
     type: upstream
     upstream: "gatsby:http"
 
