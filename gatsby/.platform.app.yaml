@@ -16,13 +16,13 @@ disk: 1024
 
 # The configuration of the application when it is exposed to the web.
 web:
-    locations:
-        '/':
-            # The public directory of the application relative to its root.
-            root: 'public'
-            index: ['index.html']
-            scripts: false
-            allow: true
+    commands: 
+        start: |
+            if [ "$PLATFORM_BRANCH" = master ]; then
+               npm run serve -- -p $PORT
+            else
+               npm run develop
+            fi
 
 mounts:
   '/.cache':
