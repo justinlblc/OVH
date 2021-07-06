@@ -6,7 +6,8 @@ import { Link } from "gatsby"
 const Home = ({ user }) => {
   return <p>Hi, {user.name ? user.name : "friend"}!</p>
 }
-const Profile = () => <p>Profile</p>
+const Settings = () => <p>Settings</p>
+const Billing = () => <p>Billing</p>
 
 const Account = () => {
   if (!isAuthenticated()) {
@@ -20,7 +21,8 @@ const Account = () => {
     <>
       <nav>
         <Link to="/account/">Home</Link>{" "}
-        <Link to="/account/profile/">Profile</Link>{" "}
+        <Link to="/account/settings/">Settings</Link>{" "}
+        <Link to="/account/billing/">Billing</Link>{" "}
         <a
           href="#logout"
           onClick={e => {
@@ -33,7 +35,8 @@ const Account = () => {
       </nav>
       <Router>
         <Home path="/account/" user={user} />
-        <Profile path="/account/profile" />
+        <Settings path="/account/settings" />
+        <Billing path="/account/billing" />
       </Router>
     </>
   )

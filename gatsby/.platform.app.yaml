@@ -10,19 +10,19 @@ type: 'nodejs:14'
 hooks:
     # Build hooks can modify the application files on disk but not access any services like databases.
     post_deploy: |
-      npm run build
+            npm run build
 # The size of the persistent disk of the application (in MB).
 disk: 1024
 
 # The configuration of the application when it is exposed to the web.
 web:
-    commands: 
-        start: |
-            if [ "$PLATFORM_BRANCH" = master ]; then
-               npm run serve -- -p $PORT
-            else
-               npm run develop
-            fi
+    locations:
+        '/':
+            # The public directory of the application relative to its root.
+            root: 'public'
+            index: ['index.html']
+            scripts: false
+            allow: true
 
 mounts:
   '/.cache':

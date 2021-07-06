@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Index = () => (
   <div>
-    <p>Welcome to Deal Ex Machina Website!</p>
+    <p>Hello Gatsby!</p>
     <Link to="/account">Go to your account</Link>
   </div>
 )
