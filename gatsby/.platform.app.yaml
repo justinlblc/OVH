@@ -5,12 +5,11 @@ name: gatsby
 
 # The type key specifies the language and version for your application.
 type: 'nodejs:14'
-  
+
 # The hooks that will be triggered when the package is deployed.
 hooks:
     # Build hooks can modify the application files on disk but not access any services like databases.
-    post_deploy:
-      npm i npm@latest
+    post_deploy: |
       npm run build
 # The size of the persistent disk of the application (in MB).
 disk: 1024
