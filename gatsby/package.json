@@ -1,8 +1,8 @@
 {
-  "name": "deal-ex-machina",
+  "name": "gatsby",
   "version": "1.0.0",
   "private": true,
-  "description": "Deal Ex Machina",
+  "description": "gatsby",
   "author": "justinlblc",
   "keywords": [
     "gatsby"
@@ -19,7 +19,6 @@
     "auth0-js": "^9.16.2",
     "gatsby": "^3.8.1",
     "gatsby-plugin-create-client-paths": "^3.8.0",
-    "npm": "^7.19.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
