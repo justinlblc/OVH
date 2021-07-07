@@ -1,3 +1,9 @@
+#Gatsby
 "https://{default}/":
   type: upstream
   upstream: "gatsby:http"
+
+#Strapi
+"https://www.backend.{default}/":
+    type: upstream
+    upstream: "strapi:http"
