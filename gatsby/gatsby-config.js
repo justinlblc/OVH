@@ -3,10 +3,5 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "gatsby",
   },
-  plugins: [
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/account/*`] },
-    },
-  ],
+  plugins: [],
 };
