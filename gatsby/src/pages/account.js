@@ -2,6 +2,7 @@ import React from "react"
 import { Router } from "@reach/router"
 import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
 import { Link } from "gatsby"
+import Nav from ".../components/nav"
 
 const Home = ({ user }) => {
   return <p>Hi, {user.name ? user.name : "friend"}!</p>
@@ -19,19 +20,7 @@ const Account = () => {
 
   return (
     <>
-      <nav>
-        <Link to="/account/">Home</Link>{" "}
-        <Link to="/account/settings/">Settings</Link>
-        <a
-          href="#logout"
-          onClick={e => {
-            logout()
-            e.preventDefault()
-          }}
-        >
-          Log Out
-        </a>
-      </nav>
+      <Nav />
       <Router>
         <Home path="/account/" user={user} />
         <Settings path="/account/settings" />
