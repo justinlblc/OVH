@@ -1,10 +1,31 @@
-// custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
-// normalize CSS across browsers
-import "./src/normalize.css"
-// custom CSS styles
-import "./src/style.css"
+import React from "react"
+import { silentAuth } from "./src/utils/auth"
 
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
+class SessionCheck extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loading: true,
+    }
+  }
+
+  handleCheckSession = () => {
+    this.setState({ loading: false })
+  }
+
+  componentDidMount() {
+    silentAuth(this.handleCheckSession)
+  }
+
+  render() {
+    return (
+      this.state.loading === false && (
+        <React.Fragment>{this.props.children}</React.Fragment>
+      )
+    )
+  }
+}
+
+export const wrapRootElement = ({ element }) => {
+  return <SessionCheck>{element}</SessionCheck>
+}
