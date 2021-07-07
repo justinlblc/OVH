@@ -16,8 +16,6 @@
   },
   "dependencies": {
     "gatsby": "^3.8.1",
-    "npm": "^7.19.1",
-    "platformsh-config": "^2.4.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
