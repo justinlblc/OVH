@@ -15,3 +15,5 @@ const Nav =() => (
     </a>
     </div>
 )
+
+export default Nav
