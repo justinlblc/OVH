@@ -37,13 +37,3 @@ web:
             index: ['index.html']
             scripts: false
             allow: true
-mounts:
-  '/.cache':
-      source: local
-      source_path: cache
-  '/.config':
-      source: local
-      source_path: config
-  'public':
-      source: local
-      source_path: public
