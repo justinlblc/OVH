@@ -14,8 +14,8 @@ module.exports = {
     options: {
       apiURL: "https://backend.master-7rqtwti-zeguxhectgcvy.ovhcloud-fr-1.webpaas.ovh.net",
       queryLimit: 1000,
-      contentTypes: [`article`, `category `]
-    }
-  }
+      contentTypes: [`article`, `category `],
+    },
+  },
 ],
 };
