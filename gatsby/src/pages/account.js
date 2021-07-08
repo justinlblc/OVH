@@ -11,6 +11,9 @@ const Account = () => {
     return (
       <>
         <Layout>
+            <div>
+                Welcome to your account page
+            </div>
         </Layout>
       </>
     )
