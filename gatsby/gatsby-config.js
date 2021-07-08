@@ -1,6 +1,3 @@
-require("dotenv").config({
-  path: `.env`,
-});
 
 module.exports = {
   siteMetadata: {
@@ -11,14 +8,6 @@ module.exports = {
   {
     resolve: `gatsby-plugin-create-client-paths`,
     options: { prefixes: [`/account/*`] },
-  },
-  {
-    resolve: `gatsby-source-strapi`,
-    options: {
-      apiURL: process.env.API_URL,
-      queryLimit: 1000, // Defaults to 100
-      collectionTypes: [`article`, `category`],
-    },
   },
   "gatsby-plugin-image",
 ],
