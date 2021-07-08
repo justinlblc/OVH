@@ -20,7 +20,7 @@ const Account = () => {
     <>
       <Layout>
       <Router>
-        <Home path="/account/" user={user} />
+        <Home path="/account/home" user={user} />
         <Settings path="/account/settings" />
       </Router>
       </Layout>
