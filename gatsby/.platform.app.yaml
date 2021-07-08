@@ -18,7 +18,7 @@ dependencies:
 # The hooks that will be triggered when the package is deployed.
 hooks:
     # Build hooks can modify the application files on disk but not access any services like databases.
-    post_deploy: |
+    build: |
         yarn
         yarn build        
 
@@ -37,3 +37,13 @@ web:
             index: ['index.html']
             scripts: false
             allow: true
+mounts:
+  '/.cache':
+      source: local
+      source_path: cache
+  '/.config':
+      source: local
+      source_path: config
+  'public':
+      source: local
+      source_path: public
