@@ -1,16 +1,7 @@
-"https://www.{default}/":
+"https://{default}/":
     type: upstream
     upstream: "gatsby:http"
 
-"https://{default}/":
-    type: redirect
-    to: "https://www.{default}/"
-
-"https://www.backend.{default}/":
+"https://backend.{default}/":
     type: upstream
     upstream: "strapi:http"
-
-"https://backend.{default}/":
-    type: redirect
-    id: 'strapi'
-    to: "https://www.backend.{default}/"
