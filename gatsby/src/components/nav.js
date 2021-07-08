@@ -1,6 +1,4 @@
 import React from "react"
-import Home from "./home"
-import Settings from "./settings"
 import { Router } from "@reach/router"
 import {Link} from "gatsby"
 import {logout} from "../utils/auth"
@@ -18,10 +16,6 @@ const Nav = () => (
         >
           Log Out
         </a>
-        <Router>
-        <Home path="/account/" user={user} />
-        <Settings path="/account/settings" />
-      </Router>
     </div>
 )
 
