@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Home from "../components/home"
 import Settings from "../components/settings"
 
+const user = getProfile()
+
 const Account = () => {
     if (!isAuthenticated()) {
       login()
