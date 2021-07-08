@@ -25,6 +25,10 @@ hooks:
 # The size of the persistent disk of the application (in MB).
 disk: 5120
 
+#relation with strapi
+relationships:
+   strapi: "strapi:http"
+   
 # The configuration of the application when it is exposed to the web.
 web:
     locations:
