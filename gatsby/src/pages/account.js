@@ -11,7 +11,7 @@ const Account = () => {
   const user = getProfile()
 
   return (
-    <>
+    <>  
       <Layout>
         <p>Welcome to your account page</p>
       </Layout>
