@@ -13,7 +13,9 @@ const Account = () => {
   
     return (
       <>
-        <Layout>Welcome</Layout>
+        <Layout>
+          
+        </Layout>
         <Router>
           <Home path="/account/" />
           <Settings path="/account/settings" />
