@@ -2,11 +2,8 @@ import React from "react"
 import { Router } from "@reach/router"
 import { login, isAuthenticated, getProfile } from "../utils/auth"
 import Layout from "../components/layout"
-import Settings from "./settings"
-
-const Home = ({ user }) => {
-  return <p>Hi, {user.name ? user.name : "friend"}!</p>
-}
+import Settings from "../components/settings"
+import Home from "../components/home"
 
 const Account = () => {
   if (!isAuthenticated()) {
