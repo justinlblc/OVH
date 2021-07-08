@@ -1,8 +1,7 @@
 import React from "react"
 import { Router } from "@reach/router"
 import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
-import { Link } from "gatsby"
-import Nav from ".../components/nav"
+import Layout from ".../components/nav"
 import Settings from "./settings"
 
 const Home = ({ user }) => {
@@ -19,11 +18,12 @@ const Account = () => {
 
   return (
     <>
-      <Nav />
+      <Layout>
       <Router>
         <Home path="/account/" user={user} />
         <Settings path="/account/settings" />
       </Router>
+      </Layout>
     </>
   )
 }
