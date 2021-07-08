@@ -3,6 +3,7 @@ import { Link} from "gatsby"
 import { logout } from "../utils/auth"
 
 const Nav = () => (
+
     <div>
     <Link to="/account/home">Home</Link>{" "}
     <Link to="/account/settings/">Settings</Link>{" "}
@@ -17,5 +18,4 @@ const Nav = () => (
     </a>
     </div>
 )
-
 export default Nav
