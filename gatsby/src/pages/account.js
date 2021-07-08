@@ -1,12 +1,6 @@
 import React from "react"
-import { Router } from "@reach/router"
-import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
-import { Link } from "gatsby"
-
-const Home = ({ user }) => {
-  return <p>Hi, {user.name ? user.name : "friend"}!</p>
-}
-const Settings = () => <p>Settings</p>
+import { login, isAuthenticated, getProfile } from "../utils/auth"
+import Layout from "../components/layout"
 
 const Account = () => {
   if (!isAuthenticated()) {
@@ -18,10 +12,9 @@ const Account = () => {
 
   return (
     <>
-      <Router>
-        <Home path="/account/" user={user} />
-        <Settings path="/account/settings" />
-      </Router>
+      <Layout>
+
+      </Layout>
     </>
   )
 }
