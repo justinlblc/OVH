@@ -2,7 +2,7 @@ import React from "react"
 
 const Home = ({user}) => {
     return (
-        <p>Hi, {user.name}!</p>
+        <p>Hi, welcome to your home page</p>
     )
 }
 
