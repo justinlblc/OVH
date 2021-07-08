@@ -20,6 +20,14 @@
     "gatsby": "^3.9.0",
     "gatsby-plugin-create-client-paths": "^3.9.0",
     "gatsby-plugin-gatsby-cloud": "^2.9.0",
+    "gatsby-plugin-react-helmet": "^4.9.0",
+    "gatsby-plugin-sharp": "^3.9.0",
+    "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-source-strapi": "^1.0.2",
+    "gatsby-transformer-sharp": "^3.9.0",
+    "offline": "^0.0.1",
+    "platformsh-config": "^2.4.1",
+    "plugin": "^0.3.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

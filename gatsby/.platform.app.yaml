@@ -18,12 +18,15 @@ dependencies:
 # The hooks that will be triggered when the package is deployed.
 hooks:
     # Build hooks can modify the application files on disk but not access any services like databases.
-    build: |
+    post_deploy: |
         yarn
         yarn build        
 
 # The size of the persistent disk of the application (in MB).
 disk: 5120
+
+relationships:
+   strapi: "strapi:http"
 
 # The configuration of the application when it is exposed to the web.
 web:
@@ -34,3 +37,13 @@ web:
             index: ['index.html']
             scripts: false
             allow: true
+mounts:
+  '/.cache':
+      source: local
+      source_path: cache
+  '/.config':
+      source: local
+      source_path: config
+  'public':
+      source: local
+      source_path: public
