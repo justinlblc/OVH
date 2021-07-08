@@ -19,23 +19,12 @@ const Account = () => {
 
   return (
     <>
-      <nav>
-        <Link to="/account/">Home</Link>{" "}
-        <Link to="/account/settings/">Settings</Link>{" "}
-        <a
-          href="#logout"
-          onClick={e => {
-            logout()
-            e.preventDefault()
-          }}
-        >
-          Log Out
-        </a>
-      </nav>
+      <Layout>
       <Router>
         <Home path="/account/" user={user} />
         <Settings path="/account/settings" />
       </Router>
+      </Layout>
     </>
   )
 }
