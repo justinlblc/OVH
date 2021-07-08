@@ -13,7 +13,7 @@ const Account = () => {
   
     return (
       <>
-        <Nav />
+        <Layout>Welcome</Layout>
         <Router>
           <Home path="/account/" />
           <Settings path="/account/settings" />
