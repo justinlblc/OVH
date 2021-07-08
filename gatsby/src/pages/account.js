@@ -1,6 +1,6 @@
 import React from "react"
 import { Router } from "@reach/router"
-import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
+import { login, isAuthenticated, getProfile } from "../utils/auth"
 import Layout from "../components/layout"
 import Settings from "./settings"
 
