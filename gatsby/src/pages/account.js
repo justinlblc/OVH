@@ -3,7 +3,6 @@ import { Router } from "@reach/router"
 import { login, isAuthenticated, getProfile } from "../utils/auth"
 import Layout from "../components/layout"
 import Settings from "./settings"
-import Home from "./home"
 
 const Home = ({ user }) => {
   return <p>Hi, {user.name ? user.name : "friend"}!</p>
