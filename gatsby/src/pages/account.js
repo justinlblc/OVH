@@ -7,7 +7,6 @@ const Home = ({ user }) => {
   return <p>Hi, {user.name ? user.name : "friend"}!</p>
 }
 const Settings = () => <p>Settings</p>
-const Billing = () => <p>Billing</p>
 
 const Account = () => {
   if (!isAuthenticated()) {
@@ -19,12 +18,10 @@ const Account = () => {
 
   return (
     <>
-      <Layout>
       <Router>
         <Home path="/account/" user={user} />
         <Settings path="/account/settings" />
       </Router>
-      </Layout>
     </>
   )
 }
