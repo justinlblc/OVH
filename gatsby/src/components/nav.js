@@ -1,6 +1,7 @@
 import React from "react"
+import { Link} from "gatsby"
 
-const Nav =() => (
+const Nav = () => (
     <div>
     <Link to="/account/">Home</Link>{" "}
     <Link to="/account/settings/">Settings</Link>{" "}
