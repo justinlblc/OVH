@@ -9,6 +9,5 @@ module.exports = {
     resolve: `gatsby-plugin-create-client-paths`,
     options: { prefixes: [`/account/*`] },
   },
-  "gatsby-plugin-image",
 ],
 };
