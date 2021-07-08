@@ -5,6 +5,10 @@ import Layout from "../components/layout"
 import Settings from "./settings"
 import Home from "./home"
 
+const Home = ({ user }) => {
+  return <p>Hi, {user.name ? user.name : "friend"}!</p>
+}
+
 const Account = () => {
   if (!isAuthenticated()) {
     login()
