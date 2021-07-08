@@ -13,7 +13,7 @@ const Account = () => {
   return (
     <>
       <Layout>
-
+        <p>Welcome to your account page</p>
       </Layout>
     </>
   )
