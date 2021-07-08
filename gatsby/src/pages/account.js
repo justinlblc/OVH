@@ -22,7 +22,6 @@ const Account = () => {
       <nav>
         <Link to="/account/">Home</Link>{" "}
         <Link to="/account/settings/">Settings</Link>{" "}
-        <Link to="/account/billing/">Billing</Link>{" "}
         <a
           href="#logout"
           onClick={e => {
@@ -36,7 +35,6 @@ const Account = () => {
       <Router>
         <Home path="/account/" user={user} />
         <Settings path="/account/settings" />
-        <Billing path="/account/billing" />
       </Router>
     </>
   )
