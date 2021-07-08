@@ -5,8 +5,6 @@ import Nav from "../components/nav"
 import Home from "../components/home"
 import Settings from "../components/settings"
 
-const user = getProfile()
-
 const Account = () => {
     if (!isAuthenticated()) {
       login()
@@ -17,7 +15,7 @@ const Account = () => {
       <>
         <Nav />
         <Router>
-          <Home path="/account/" user={user} />
+          <Home path="/account/" />
           <Settings path="/account/settings" />
         </Router>
       </>

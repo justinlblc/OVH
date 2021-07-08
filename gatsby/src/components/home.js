@@ -1,7 +1,7 @@
 import React from "react"
 
-const Home = ({ user }) => {
-    return <p>Hi, {user.name ? user.name : "friend"}!</p>
-  }
+const Home = () => (
+  <p>Hi and welcome to the home page</p>
+  )
 
 export default Home
