@@ -1,6 +1,18 @@
+const config = require("platformsh-config").config();
+
+var backend_route = "";
+if ( config.isValidPlatform() ) {
+  require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+  backend_route = `http://${config.credentials("strapi")["host"]}`
+} else {
+  require("dotenv").config()
+  backend_route = process.env.API_URL;
+}
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
     title: "DealExMachina Website",
     desciption: "Official DealExMachina website where you will see many articles covering a large range of subjects."
   },
@@ -8,5 +20,14 @@ module.exports = {
   {
     resolve: `gatsby-plugin-create-client-paths`,
     options: { prefixes: [`/account/*`] },
-  },],
+  },
+  {
+    resolve: `gatsby-source-strapi`,
+    options: {
+      apiURL: `http://localhost:1337`,
+      queryLimit: 1000, // Defaults to 100
+      collectionTypes: [`article`, `category`],
+    },
+  },
+],
 };
