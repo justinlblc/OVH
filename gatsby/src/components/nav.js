@@ -1,6 +1,6 @@
 import React from "react"
-import Home from "./components"
-import Settings from "./components"
+import Home from "./components/home"
+import Settings from "./components/settings"
 import { Router } from "@reach/router"
 import {Link} from "gatsby"
 import {logout} from "../utils/auth"

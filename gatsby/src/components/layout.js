@@ -1,5 +1,5 @@
 import React from "react"
-import Nav from "./nav"
+import Nav from "../nav"
 import PropTypes from "prop-types"
 
 const Layout = ({children}) => {
@@ -13,5 +13,5 @@ const Layout = ({children}) => {
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
   }
-  
+
 export default Layout
