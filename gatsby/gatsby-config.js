@@ -1,15 +1,6 @@
-const config = require("platformsh-config").config();
-
-var backend_route = "";
-if ( config.isValidPlatform() ) {
-  require("dotenv").config({
-    path: `.env.${process.env.NODE_ENV}`,
-  })
-  backend_route = `http://${config.credentials("strapi")["host"]}`
-} else {
-  require("dotenv").config()
-  backend_route = process.env.API_URL;
-}
+require("dotenv").config({
+  path: `.env`,
+});
 
 module.exports = {
   siteMetadata: {
@@ -24,10 +15,11 @@ module.exports = {
   {
     resolve: `gatsby-source-strapi`,
     options: {
-      apiURL: backend_route,
+      apiURL: process.env.API_URL,
       queryLimit: 1000, // Defaults to 100
       collectionTypes: [`article`, `category`],
     },
   },
+  "gatsby-plugin-image",
 ],
 };
