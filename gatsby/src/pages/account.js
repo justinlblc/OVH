@@ -14,7 +14,6 @@ const Account = () => {
     return (
       <>
         <Layout>
-          
         </Layout>
         <Router>
           <Home path="/account/" />
