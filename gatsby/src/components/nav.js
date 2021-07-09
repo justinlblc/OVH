@@ -4,7 +4,6 @@ import {logout} from "../utils/auth"
 
 const Nav = () => (
     <div>
-     
         <Link to="/account/">Home</Link>{" "}
         <Link to="/account/settings/">Settings</Link>{" "}
         <a
