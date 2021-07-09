@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const Index = ({data}) => {
   return (  
@@ -11,14 +11,5 @@ const Index = ({data}) => {
   )
 }
 
-export const query = graphql`
-+  query HomePageQuery {
-+    site {
-+      siteMetadata {
-+         title
-+      }
-+    }
-+  }
-`
 export default Index
 
