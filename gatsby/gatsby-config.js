@@ -19,17 +19,5 @@ module.exports = {
     resolve: `gatsby-plugin-create-client-paths`,
     options: { prefixes: [`/account/*`] },
   },
-  {
-    resolve: "gatsby-source-strapi",
-    options: {
-      apiURL: backend_route,
-      contentTypes: [
-        // List of the Content Types you want to be able to request from Gatsby.
-        "article",
-        "category",
-      ],
-      queryLimit: 1000,
-    },
-  },
 ],
 };
