@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby"
+import {Link, graphql, StaticQuery} from "gatsby"
 import {logout} from "../utils/auth"
 
 const Nav = () => (
