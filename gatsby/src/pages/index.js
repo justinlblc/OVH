@@ -1,12 +1,21 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
-const Index = () => (
+const Index = ({data}) => {}
   <div>
-    <p>Hello Gatsby!</p>
+    Hello Gatsby!
+    {data.site.siteMetadata.title}
     <Link to="/account">Go to your account throught this link</Link>
   </div>
-)
-
+}
+export const query = graphql`
++  query HomePageQuery {
++    site {
++      siteMetadata {
++         title
++      }
++    }
++  }
+`
 export default Index
 
