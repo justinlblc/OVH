@@ -7,7 +7,7 @@ name: 'gatsby'
 type: 'nodejs:14'
 
 # Use Yarn instead of npm.
-build:
+post_deploy:
     flavor: none
 
 # Build dependencies. 
@@ -18,7 +18,7 @@ dependencies:
 # The hooks that will be triggered when the package is deployed.
 hooks:
     # Build hooks can modify the application files on disk but not access any services like databases.
-    build: |
+    post_deploy: |
         yarn
         yarn build        
 
