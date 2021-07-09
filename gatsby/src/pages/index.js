@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-const Index = ({data}) => {}
+const Index = ({data}) => {
   <div>
     Hello Gatsby!
     {data.site.siteMetadata.title}
