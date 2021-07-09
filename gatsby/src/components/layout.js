@@ -1,9 +1,10 @@
 import React from "react"
-import {getProfile } from "../utils/auth"
+import { useStaticQuery, Link, graphql } from "gatsby"
 
 import Nav from "./nav"
 
 const Layout = ({children}) => {
+    const 
     return (
     <>
     <Nav />
