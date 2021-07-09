@@ -7,12 +7,20 @@ name: 'gatsby'
 type: 'nodejs:14'
 
 # Use Yarn instead of npm.
+build:
+    flavor: none
+
+# Build dependencies. 
+dependencies:
+    nodejs:
+        yarn: "1.22.5"
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
     # Build hooks can modify the application files on disk but not access any services like databases.
-    post_deploy: |
-        npm run build      
+    build: |
+        yarn
+        yarn build        
 
 # The size of the persistent disk of the application (in MB).
 disk: 5120
@@ -26,3 +34,13 @@ web:
             index: ['index.html']
             scripts: false
             allow: true
+mounts:
+  '/.cache':
+      source: local
+      source_path: cache
+  '/.config':
+      source: local
+      source_path: config
+  'public':
+      source: local
+      source_path: public
