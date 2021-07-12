@@ -11,12 +11,15 @@ const Index = ({data}) => {
 }
 export const query = graphql`
   query IndexQuery {
-   site {
-      siteMetadata {
-       title
-    }
-  }
-}
+    allStrapiCategory {
+                    edges {
+                      node {
+                        strapiId
+                        name
+                      }
+                    }
+                  }
+                }
 `
 
 export default Index
