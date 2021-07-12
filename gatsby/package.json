@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
