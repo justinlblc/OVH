@@ -18,15 +18,30 @@ const Index = () => {
   return (  
   <div>
     <StaticQuery
-    query={query}
-    render={data => (
-      <ul>
-        {data.allStrapiArticle.edges.map(article => (
-          <li key={article.node.strapiID}>{article.node.title}</li>
-        ))}
-      </ul>
-    )}
-    />
+              query={graphql`
+                query {
+                  allStrapiCategory {
+                    edges {
+                      node {
+                        strapiId
+                        name
+                      }
+                    }
+                  }
+                }
+              `}
+              render={data =>
+                data.allStrapiCategory.edges.map((category, i) => {
+                  return (
+                    <li key={category.node.strapiId}>
+                      <Link to={`/category/${category.node.strapiId}`}>
+                        {category.node.name}
+                      </Link>
+                    </li>
+                  )
+                })
+              }
+            />
     <Link to="/account">Go to your account there</Link>
   </div>
   )
