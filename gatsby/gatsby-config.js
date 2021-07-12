@@ -12,17 +12,7 @@ module.exports = {
       path: `${__dirname}/src/images`,
     },
   },
-  {
-    resolve: 'gatsby-source-strapi',
-    options: {
-      apiURL: 'https://backend.master-7rqtwti-zeguxhectgcvy.ovhcloud-fr-1.webpaas.ovh.net/',
-      contentTypes: [ 
-        'article',
-        'category'
-      ],
-      queryLimit: 1000,
-    },
-  },
+ 
   "gatsby-transformer-sharp",
   "gatsby-plugin-sharp",
   {
