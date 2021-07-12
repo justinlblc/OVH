@@ -1,11 +1,3 @@
-const config = require("platformsh-config").config();
-
-if (!config.isValidPlatform()) {
-  process.exit('Not in a Platform.sh Environment.');
-} else {
-  process.exit("in a Platform.sh Environment.");
-}
-
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
