@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@reach/router": "^1.3.4",
     "auth0-js": "^9.16.2",
+    "cross-env": "^7.0.3",
     "gatsby": "^3.9.0",
     "gatsby-plugin-create-client-paths": "^3.9.0",
     "gatsby-plugin-gatsby-cloud": "^2.9.0",
