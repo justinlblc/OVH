@@ -20,5 +20,6 @@ module.exports = {
     options: { prefixes: [`/account/*`] },
   },
   "gatsby-plugin-offline",
+  `gatsby-plugin-playground`,
 ],
 };
