@@ -7,8 +7,8 @@
 yarn develop
 
 # Environment-specific configuration for Strapi.
-#if [ "$PLATFORM_BRANCH" = master ]; then
-#   yarn start
-#else
-#   yarn develop
-#fi
+# if [ "$PLATFORM_BRANCH" = master ]; then
+#    yarn start
+# else
+#    yarn develop
+# fi

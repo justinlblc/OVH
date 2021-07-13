@@ -11,10 +11,12 @@ if ( config.isValidPlatform() ) {
   backend_route = process.env.API_URL;
 }
 
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "gatsby",
+    title: "My super blog",
+    description: "Gatsby blog with Strapi",
+    author: "Strapi team",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -39,6 +41,17 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "gatsby-starter-default",
+        short_name: "starter",
+        start_url: "/",
+        background_color: "#663399",
+        theme_color: "#663399",
+        display: "minimal-ui",
+      },
+    },
     "gatsby-plugin-offline",
   ],
-};
+}
