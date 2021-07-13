@@ -1,11 +1,10 @@
 import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 const Index = ({data}) => {
-  const {title} = data.site.siteMetadata
   return (  
   <div>
-    <Link to="/account">Go to your account there ({title)}</Link>
+    <Link to="/account">Go to your account there {data.site.siteMetadata.title}</Link>
   </div>
   )
 }
@@ -19,8 +18,5 @@ export const query = graphql`
       }
     }
 `
-
-
-
 export default Index
 
