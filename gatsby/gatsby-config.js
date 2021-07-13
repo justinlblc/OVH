@@ -15,7 +15,7 @@ module.exports = {
   {
     resolve: "gatsby-source-strapi",
     options: {
-      apiURL: "future_URL",
+      apiURL: "https://backend.master-7rqtwti-zeguxhectgcvy.ovhcloud-fr-1.webpaas.ovh.net",
       contentTypes: [
         "article",
         "category",
