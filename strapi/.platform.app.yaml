@@ -40,7 +40,7 @@ hooks:
             mkdir components-tmp && mv components/* components-tmp
         fi
     deploy: |
-        # Copy overrides back to where they need to be.
+# Copy overrides back to where they need to be.
         if [ -n "$(ls -A extensions-tmp)" ]; then
             cp -r extensions-tmp/* extensions
         fi        
