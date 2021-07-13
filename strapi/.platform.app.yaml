@@ -1,9 +1,3 @@
-# This file describes an application. You can have multiple applications
-# in the same project.
-#
-# See https://docs.platform.sh/configuration/app.html
-
-# The name of this app. Must be unique within a project.
 name: strapi
 
 # The runtime the application uses. Strapi not yet suppported with NodeJS 14.
@@ -21,12 +15,9 @@ dependencies:
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     build: |
-# Download dependencies and build Strapi.
         yarn
         yarn build
 
-# Local development will commit changes to subdirectories that will become mounts on
-# Platform.sh and overwritten during deployments. To prevent that, set aside during builds.
         if [ -n "$(ls -A extensions)" ]; then
             mkdir extensions-tmp && mv extensions/* extensions-tmp
         fi        
@@ -40,7 +31,7 @@ hooks:
             mkdir components-tmp && mv components/* components-tmp
         fi
     deploy: |
-# Copy overrides back to where they need to be.
+
         if [ -n "$(ls -A extensions-tmp)" ]; then
             cp -r extensions-tmp/* extensions
         fi        
@@ -54,18 +45,13 @@ hooks:
             cp -r components-tmp/* components
         fi
 
-# The relationships of the application with services or other applications.
-#
-# The left-hand side is the name of the relationship as it will be exposed
-# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
-# side is in the form `<service name>:<endpoint name>`.
 relationships:
   postgresdatabase: "dbpostgres:postgresql"
 
 # The configuration of app when it is exposed to the web.
 web:
     locations:
-        # For serving the generated OpenAPI specification as part of the documentation.
+        
         "/docs/spec":
             root: "extensions/documentation/documentation/1.0.0"
             allow: true
@@ -74,7 +60,6 @@ web:
                 - full_documentation.json
     commands:
         start: |
-# Production start on `master`, development server otherwise.
             if [ "$PLATFORM_BRANCH" = master ]; then
                 NODE_ENV=production yarn start
             else
@@ -84,7 +69,6 @@ web:
 # The size of the persistent disk of the application (in MB).
 disk: 1024
 
-# The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
     # Strapi's cache directory.
     '/.cache':
