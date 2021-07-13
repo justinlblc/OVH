@@ -61,7 +61,7 @@ web:
     commands:
         start: |
             if [ "$PLATFORM_BRANCH" = master ]; then
-                NODE_ENV=production yarn start
+                NODE_ENV=development yarn start
             else
                 yarn develop
             fi
