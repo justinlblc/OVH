@@ -11,12 +11,21 @@ const Index = ({data}) => {
 
 export const query = graphql`
     query IndexTest {
-      site {
-        siteMetadata {
-          title
+      allStrapiArticle {
+            edges {
+              node {
+                strapiId
+                title
+                category {
+                  name
+                }
+                image {
+                  publicURL
+                }
+              }
+            }
+          }
         }
-      }
-    }
 `
 export default Index
 
