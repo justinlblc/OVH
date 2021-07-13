@@ -33,4 +33,12 @@ module.exports = {
   "gatsby-plugin-offline",
   `gatsby-plugin-playground`,
 ],
+{
+  "resolutions": {
+    "graphql": "^15.4.0",
+    "graphql-compose": "^7.25.0",
+    "webpack": "^5.24.2"
+  }
+}
 };
+
