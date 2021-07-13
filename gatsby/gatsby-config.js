@@ -9,18 +9,18 @@ module.exports = {
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `images`,
-      path: `${__dirname}/src/images`,
+      path: `./src/images`,
     },
   },
   {
     resolve: `gatsby-source-strapi`,
     options: {
       apiURL: `http://localhost:1337`,
+      queryLimit: 1000,
       contentTypes: [
         `article`,
         `category`,
-      ],
-      queryLimit: 1000,
+      ],  
     },
   },
  
