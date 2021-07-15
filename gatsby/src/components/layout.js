@@ -1,14 +1,21 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import Nav from "./nav"
+import Seo from "./seo"
 
-const Layout = ({children}) => {
-    return (
+const Layout = ({ children }) => {
+  return (
     <>
-    <Nav />
-    <main>{children}</main>
+      <Seo />
+      <Nav />
+      <main>{children}</main>
     </>
-)
+  )
 }
 
-export default Layout
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout  
