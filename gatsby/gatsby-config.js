@@ -12,13 +12,13 @@ module.exports = {
     resolve: `gatsby-plugin-create-client-paths`,
     options: { prefixes: [`/account/*`] },
   },
-  {
-    resolve: "gatsby-source-strapi",
-    options: {
-      apiURL: process.env.API_URL || "http://localhost:1337",
-      collectionTypes: ["article"],
-      queryLimit: 1000,
-    },
-  },
+  //{
+ //   resolve: "gatsby-source-strapi",
+ //   options: {
+ //     apiURL: process.env.API_URL || "http://localhost:1337",
+ //     collectionTypes: ["article"],
+ //     queryLimit: 1000,
+//    },
+//  },
 ],
 };
