@@ -1,3 +1,16 @@
+const config = require("platformsh-config").config();
+
+var backend_route = "";
+if ( config.isValidPlatform() ) {
+  require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+  backend_route = `http://${config.credentials("strapi")["host"]}`
+} else {
+  require("dotenv").config()
+  backend_route = process.env.API_URL;
+}
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -11,7 +24,7 @@ module.exports = {
 {
     resolve: "gatsby-source-strapi",
     options: {
-      apiURL: process.env.API_URL || "http://localhost:1337",
+      apiURL: backend-route,
       collectionTypes: ["article"],
       queryLimit: 1000,
     },
