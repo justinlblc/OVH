@@ -7,7 +7,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://backend.master-7rqtwti-zeguxhectgcvy.ovhcloud-fr-1.webpaas.ovh.net`,
+        apiURL: `http://0.0.0.0:1337`,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`article`],
       },
