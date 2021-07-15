@@ -1,5 +1,5 @@
 # The name of this application, which must be unique within a project.
-name: 'app'
+name: 'gatsby'
 
 # The type key specifies the language and version for your application.
 type: 'nodejs:14'
