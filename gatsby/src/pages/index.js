@@ -1,13 +1,42 @@
 import React from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
-const Index = () => {
-  return (  
-  <div>
-    <Link to="/account">Go to your account there</Link>
-  </div>
-  )
-}
+import Layout from "../components/layout"
+import ArticlesComponent from "../components/articles"
 
-export default Index
+import "../assets/css/main.css"
 
+const IndexPage = () => (
+  <Layout>
+    <StaticQuery
+      query={graphql`
+        query {
+          allStrapiArticle {
+            edges {
+              node {
+                strapiId
+                title
+                category {
+                  name
+                }
+                image {
+                  publicURL
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <div className="uk-section">
+          <div className="uk-container uk-container-large">
+            <h1>Strapi blog</h1>
+            <ArticlesComponent articles={data.allStrapiArticle.edges} />
+          </div>
+        </div>
+      )}
+    />
+  </Layout>
+)
+
+export default IndexPage
