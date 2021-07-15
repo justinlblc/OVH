@@ -1,24 +1,25 @@
-require("dotenv").config({
-  path: `.env`,
-});
-
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "gatsby",
   },
   plugins: ["gatsby-plugin-gatsby-cloud",
+  "gatsby-plugin-react-helmet",
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/src/images`,
+    },
+  },
+ 
+  "gatsby-transformer-sharp",
+  "gatsby-plugin-sharp",
   {
     resolve: `gatsby-plugin-create-client-paths`,
     options: { prefixes: [`/account/*`] },
   },
-  //{
- //   resolve: "gatsby-source-strapi",
- //   options: {
- //     apiURL: process.env.API_URL || "http://localhost:1337",
- //     collectionTypes: ["article"],
- //     queryLimit: 1000,
-//    },
-//  },
+  "gatsby-plugin-offline",
+  `gatsby-plugin-playground`,
 ],
 };
