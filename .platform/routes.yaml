@@ -4,4 +4,4 @@
 
 "https://backend.{default}/":
     type: upstream
-    to: "strapi:http"
+    upstream: "strapi:http"
