@@ -1,41 +1,24 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import ArticlesComponent from "../components/articles"
-
-import "../assets/css/main.css"
+import Image from "../components/image"
+import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <StaticQuery
-      query={graphql`
-        query {
-          allStrapiArticle {
-            edges {
-              node {
-                strapiId
-                title
-                category {
-                  name
-                }
-                image {
-                  publicURL
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <div className="uk-section">
-          <div className="uk-container uk-container-large">
-            <h1>Strapi blog</h1>
-            <ArticlesComponent articles={data.allStrapiArticle.edges} />
-          </div>
-        </div>
-      )}
-    />
+    <SEO title="Home" />
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site, content courtesy of Drupal!</p>
+    <p>It is now pulling data from your backend Drupal 8 application container on Platform.sh.</p>
+    <Link to="/articles/">
+      <h4>View your Drupal articles</h4>
+    </Link>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <Image />
+    </div>
+    <Link to="/page-2/">Go to page 2</Link> <br />
+    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 

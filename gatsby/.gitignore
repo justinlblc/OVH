@@ -52,7 +52,7 @@ typings/
 *.tgz
 
 # dotenv environment variable files
-.env*
+.env
 
 # gatsby files
 .cache/
@@ -70,4 +70,5 @@ yarn-error.log
 
 # Ignore mounts
 .cache
+.config
 public

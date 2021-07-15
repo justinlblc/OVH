@@ -3,6 +3,9 @@
 # Each service listed will be deployed
 # to power your Platform.sh project.
 
-dbpostgres:
-    type: postgresql:12
-    disk: 256
+db:
+    type: mariadb:10.4
+    disk: 2048
+
+cache:
+    type: redis:5.0

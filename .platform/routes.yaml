@@ -1,8 +1,3 @@
-# The routes of the project.
-#
-# Each route describes how an incoming URL is going
-# to be processed by Platform.sh.
-
 "https://www.{default}/":
     type: upstream
     upstream: "gatsby:http"
@@ -11,11 +6,14 @@
     type: redirect
     to: "https://www.{default}/"
 
-"https://www.backend.{default}/":
-    type: upstream
-    upstream: "strapi:http"
-
 "https://backend.{default}/":
+    type: upstream
+    upstream: "drupal:http"
+    cache:
+      enabled: true
+      # Base the cache on the session cookie and custom Drupal cookies. Ignore all other cookies.
+      cookies: ['/^SS?ESS/', '/^Drupal.visitor/']
+
+"https://www.backend.{default}/":
     type: redirect
-    id: 'strapi'
-    to: "https://www.backend.{default}/"
+    to: "https://backend.{default}/"

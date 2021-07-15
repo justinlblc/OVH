@@ -5,21 +5,26 @@ if ( config.isValidPlatform() ) {
   require("dotenv").config({
     path: `.env.${process.env.NODE_ENV}`,
   })
-  backend_route = `http://${config.credentials("strapi")["host"]}`
+    backend_route = `http://${config.credentials("drupal")["host"]}`;
 } else {
   require("dotenv").config()
-  backend_route = process.env.API_URL;
+    backend_route = process.env.API_URL;
 }
-
 
 module.exports = {
   siteMetadata: {
-    title: "My super blog",
-    description: "Gatsby blog with Strapi",
-    author: "Strapi team",
+    title: `Gatsby + Drupal on Platform.sh`,
+    description: `This template builds a two application project to deploy the Headless CMS pattern using Gatsby as its frontend and Drupal for its backend.`,
+    author: `@platformsh`,
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: backend_route
+      },
+    },
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,20 +32,22 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-source-strapi",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        apiURL: backend_route,
-        contentTypes: [
-          // List of the Content Types you want to be able to request from Gatsby.
-          "article",
-          "category",
-        ],
-        queryLimit: 1000,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-offline",
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
 }

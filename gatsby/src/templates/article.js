@@ -1,51 +1,58 @@
-import React from "react"
-import { graphql } from "gatsby"
-
-import ReactMarkdown from "react-markdown"
-import Moment from "react-moment"
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 
-export const query = graphql`
-  query ArticleQuery($id: Int!) {
-    strapiArticle(strapiId: { eq: $id }) {
-      strapiId
+const Article = ({ data }) => {
+  const post = data.nodeArticle;
+
+  return (
+    <Layout>
+      <h1>{ post.title }</h1>
+      <Link to="/articles/">
+        <h4>Back to All Articles</h4>
+      </Link>
+      <img
+        src={ post.relationships.field_image.localFile.publicURL }
+        alt={ post.field_image.alt }
+      />
+      <div dangerouslySetInnerHTML={{ __html: post.body.processed }}
+      />
+    </Layout>
+  );
+};
+
+Article.propTypes = {
+  data: PropTypes.object.isRequired,
+}
+
+export const query = graphql `
+  query($ArticleId: String!) {
+    nodeArticle(id: {eq: $ArticleId}) {
       title
-      content
-      publishedAt
-      image {
-        publicURL
+      id
+      body {
+        processed
+        summary
+      }
+      created
+      path {
+        alias
+      }
+      field_image {
+        alt
+      }
+      relationships {
+        field_image {
+          localFile {
+            publicURL
+          }
+        }
       }
     }
   }
-`
+`;
 
-const Article = ({ data }) => {
-  const article = data.strapiArticle
-  return (
-    <Layout>
-      <div>
-        <div
-          id="banner"
-          className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-          data-src={article.image.publicURL}
-          data-srcset={article.image.publicURL}
-          data-uk-img
-        >
-          <h1>{article.title}</h1>
-        </div>
-
-        <div className="uk-section">
-          <div className="uk-container uk-container-small">
-            <ReactMarkdown source={article.content} />
-            <p>
-              <Moment format="MMM Do YYYY">{article.publishedAt}</Moment>
-            </p>
-          </div>
-        </div>
-      </div>
-    </Layout>
-  )
-}
-
-export default Article
+export default Article;
