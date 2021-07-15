@@ -2,6 +2,6 @@
     type: upstream
     upstream: "gatsby:http"
 
-"http://localhost:1337":
+"http://localhost:1337/":
     type: upstream
     upstream: "strapi:http"
