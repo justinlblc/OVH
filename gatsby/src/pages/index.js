@@ -8,13 +8,18 @@ const Index = () => {
   return (
     <div>
       Hello!
-      {data.allStrapiArticle}
+      {data.allStrapiArticle.edges.node.title}
     </div>
   )
 }
 const query = graphql`
   query {
     allStrapiArticle {
+      edges {
+        node {
+          title
+        }
+      }
     }
   }
 `
