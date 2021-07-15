@@ -1,7 +1,10 @@
 import React from "react"
-import {graphql} from "gatsby"
+import {useStaticQuery, graphql} from "gatsby"
 
-const Index = ({data}) => {
+const Index = () => {
+
+  const data = useStaticQuery(query)
+
   return (
     <div>
       Hello!
@@ -9,8 +12,8 @@ const Index = ({data}) => {
     </div>
   )
 }
-export const query = graphql`
-  query HomePageQuery {
+const query = graphql`
+  query {
     allStrapiArticle {
       edges {
         node {
