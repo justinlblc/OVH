@@ -5,15 +5,17 @@ const Index = ({data}) => {
   return (
     <div>
       Hello!
-      {data.site.siteMetadata.title}
+      {data.allStrapiArticle.edges.node.title}
     </div>
   )
 }
 export const query = graphql`
   query HomePageQuery {
-    site {
-      siteMetadata {
-        title
+    allStrapiArticle {
+      edges {
+        node {
+          title
+        }
       }
     }
   }
