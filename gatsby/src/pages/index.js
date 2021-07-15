@@ -4,6 +4,7 @@ import {graphql} from "gatsby"
 const Index = ({data}) => {
   return (
     <div>
+      Hello!
       {data.site.siteMetadata.title}
     </div>
   )
