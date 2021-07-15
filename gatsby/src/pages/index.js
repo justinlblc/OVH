@@ -1,31 +1,13 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-const Index = ({data}) => {
+const Index = () => {
   return (  
   <div>
-    <Link to="/account">Go to your account there {data.site.siteMetadata.title}</Link>
+    <Link to="/account">Go to your account there</Link>
   </div>
   )
 }
 
-export const query = graphql`
-    query IndexTest {
-      allStrapiArticle {
-            edges {
-              node {
-                strapiId
-                title
-                category {
-                  name
-                }
-                image {
-                  publicURL
-                }
-              }
-            }
-          }
-        }
-`
 export default Index
 
