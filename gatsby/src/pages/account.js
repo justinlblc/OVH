@@ -1,45 +1,25 @@
 import React from "react"
 import { Router } from "@reach/router"
-import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
-import { Link } from "gatsby"
-
-const Home = ({ user }) => {
-  return <p>Hi, {user.name ? user.name : "friend"}!</p>
-}
-const Settings = () => <p>Settings</p>
-const Billing = () => <p>Billing</p>
+import { login, isAuthenticated } from "../utils/auth"
+import Layout from "../components/layout"
+import Home from "../components/home"
+import Settings from "../components/settings"
 
 const Account = () => {
-  if (!isAuthenticated()) {
-    login()
-    return <p>Redirecting to login...</p>
+    if (!isAuthenticated()) {
+      login()
+      return <p>Redirecting to login...</p>
+    }
+  
+    return (
+      <>
+        <Layout>
+        </Layout>
+        <Router>
+          <Home path="/account/" />
+          <Settings path="/account/settings" />
+        </Router>
+      </>
+    )
   }
-
-  const user = getProfile()
-
-  return (
-    <>
-      <nav>
-        <Link to="/account/">Home</Link>{" "}
-        <Link to="/account/settings/">Settings</Link>{" "}
-        <Link to="/account/billing/">Billing</Link>{" "}
-        <a
-          href="#logout"
-          onClick={e => {
-            logout()
-            e.preventDefault()
-          }}
-        >
-          Log Out
-        </a>
-      </nav>
-      <Router>
-        <Home path="/account/" user={user} />
-        <Settings path="/account/settings" />
-        <Billing path="/account/billing" />
-      </Router>
-    </>
-  )
-}
-
-export default Account
+  export default Account
