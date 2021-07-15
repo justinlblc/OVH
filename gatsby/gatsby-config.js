@@ -22,7 +22,7 @@ module.exports = {
       options: {
         apiURL: backend_route,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`article`],
+        collectionTypes: [`Article`],
       },
     },
   ],
