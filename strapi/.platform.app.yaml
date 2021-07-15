@@ -1,5 +1,10 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+#
+# See https://docs.platform.sh/configuration/app.html
+
 # The name of this app. Must be unique within a project.
-name: strapi
+name: app
 
 # The runtime the application uses. Strapi not yet suppported with NodeJS 14.
 type: nodejs:12
@@ -19,6 +24,7 @@ hooks:
         # Download dependencies and build Strapi.
         yarn
         yarn build
+
         # Local development will commit changes to subdirectories that will become mounts on
         # Platform.sh and overwritten during deployments. To prevent that, set aside during builds.
         if [ -n "$(ls -A extensions)" ]; then
@@ -47,6 +53,7 @@ hooks:
         if [ -n "$(ls -A components-tmp)" ]; then
             cp -r components-tmp/* components
         fi
+
 # The relationships of the application with services or other applications.
 #
 # The left-hand side is the name of the relationship as it will be exposed
@@ -73,6 +80,7 @@ web:
             else
                 yarn develop
             fi
+
 # The size of the persistent disk of the application (in MB).
 disk: 1024
 
@@ -102,3 +110,6 @@ mounts:
     'public/uploads':
         source: local
         source_path: uploads
+    
+
+        
