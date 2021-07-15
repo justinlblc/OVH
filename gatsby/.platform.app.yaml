@@ -11,7 +11,8 @@ hooks:
       npm run build
 # The size of the persistent disk of the application (in MB).
 disk: 1024
-
+relationships:
+   strapi: "strapi:http"
 # The configuration of the application when it is exposed to the web.
 web:
     locations:
