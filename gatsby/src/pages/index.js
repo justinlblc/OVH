@@ -13,7 +13,7 @@ export const query = graphql`
   query HomePageQuery {
     site {
       siteMetadata {
-        description
+        title
       }
     }
   }
