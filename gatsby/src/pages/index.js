@@ -1,31 +1,23 @@
 import React from "react"
 import {StaticQuery, graphql} from "gatsby"
 
-const Index = () => {
+const Index = ({data}) => {
   return (
     <div>
-    <StaticQuery
-    query={graphql`
-      query {
-        allStrapiArticle {
-          edges {
-            node {
-              strapiId
-              title
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <div>
-        <div>
-          <h1>{data.allStrapiArticle.edges}</h1>
-        </div>
-      </div>
-    )}
-  />
-  </div>
+      {data.allStrapiArticle.edges}
+    </div>
   )
 }
 export default Index
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    allStrapiArticle {
+      edges {
+        node {
+          title 
+        }
+      }
+    }
+  }
+`
