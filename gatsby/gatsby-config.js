@@ -12,5 +12,9 @@ module.exports = {
         collectionTypes: [`article`],
       },
     },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/account/*`] },
+    },
   ],
 };

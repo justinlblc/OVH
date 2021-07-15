@@ -1,9 +1,10 @@
 import React from "react"
-import {graphql} from "gatsby"
+import {graphql, Link} from "gatsby"
 
 const Index = ({data}) => (
   <div>
     hello {data.allStrapiArticle.nodes.id}
+    <Link to="/account">Go to your account</Link>
   </div>
 )
 
