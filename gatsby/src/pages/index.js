@@ -5,7 +5,7 @@ const Index = ({data}) => {
   return (
     <div>
       Hello!
-      {data.allStrapiArticle.edges.node.title}
+      {data.allStrapiArticle.edges}
     </div>
   )
 }
