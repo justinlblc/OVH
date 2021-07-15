@@ -1,4 +1,4 @@
-name: app
+name: strapi
 
 # The runtime the application uses. Strapi not yet suppported with NodeJS 14.
 type: nodejs:12
