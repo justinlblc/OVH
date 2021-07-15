@@ -76,7 +76,7 @@ web:
         start: |
             # Production start on `master`, development server otherwise.
             if [ "$PLATFORM_BRANCH" = master ]; then
-                NODE_ENV=production yarn start
+                NODE_ENV=development yarn start
             else
                 yarn develop
             fi
