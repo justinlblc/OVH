@@ -3,7 +3,7 @@ import {graphql, Link} from "gatsby"
 
 const Index = ({data}) => (
   <div>
-    hello {data.allStrapiArticle.nodes.id}
+    hello {data.allStrapiArticle.edges.node.title}
     <Link to="/account">Go to your account</Link>
   </div>
 )
@@ -11,8 +11,10 @@ const Index = ({data}) => (
 export const query=graphql`
 query MyQuery {
   allStrapiArticle {
-    nodes {
-      id
+    edges {
+      node {
+        title
+      }
     }
   }
 }
