@@ -1,22 +1,31 @@
 import React from "react"
-import {graphql, Link} from "gatsby"
+import {StaticQuery, graphql} from "gatsby"
 
-const Index = ({data}) => (
-  <div>
-    hello {data.allStrapiArticle.edges.node.title}
-    <Link to="/account">Go to your account</Link>
-  </div>
-)
-
-export const query=graphql`
-query MyQuery {
-  allStrapiArticle {
-    edges {
-      node {
-        title
+const query=graphql`
+  query {
+    allStrapiArticle {
+      edges {
+        node {
+          strapiId
+          title
+          content
+        }
       }
-    }
   }
 }
 `
+
+const Index = () => (
+  <StaticQuery
+    query={query}
+    render={data => (
+      <ul>
+        {data.allStrapiArticle.edges.map(article => (
+          <li key={article.node.strapiId}>{article.node.title}</li>
+        ))}
+      </ul>
+    )}
+  />
+);
+
 export default Index
