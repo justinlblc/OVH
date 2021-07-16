@@ -34,7 +34,7 @@ const Index = () => (
             <div>
           <h1>{home.node.title}</h1>
             </div>
-          <Img fluid={home.node.picture.localFile.childImageSharp.fixed}/>
+          <Img fixed={home.node.picture.localFile.childImageSharp.fixed}/>
           </div>
         ))}
       </ul>
