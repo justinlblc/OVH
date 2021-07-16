@@ -1,16 +1,25 @@
 import React from "react"
 import {StaticQuery, graphql} from "gatsby"
+import Img from "gatsby-image"
 
 const query=graphql`
   query {
-    allStrapiArticle {
-      edges {
-        node {
-          strapiId
-          title
-          content
+  allStrapiHome {
+    edges {
+      node {
+        strapiId
+        title
+        picture {
+          localFile {
+            childImageSharp {
+              fixed (height: 125, width: 200){
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
       }
+    }
   }
 }
 `
@@ -20,8 +29,13 @@ const Index = () => (
     query={query}
     render={data => (
       <ul>
-        {data.allStrapiArticle.edges.map(article => (
-          <li key={article.node.strapiId}>{article.node.title}</li>
+        {data.allStrapiHome.edges.map(home => (
+          <div>
+            <div>
+          <h1>{home.node.title}</h1>
+            </div>
+          <Img fluid={home.node.picture.localFile.childImageSharp.fixed}/>
+          </div>
         ))}
       </ul>
     )}
