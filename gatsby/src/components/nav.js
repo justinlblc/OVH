@@ -30,6 +30,7 @@ const Nav = () => {
           Log Out
         </a>
         <div>
+          <ul>
         <StaticQuery
         query={query}
         render={data => (
@@ -44,6 +45,7 @@ const Nav = () => {
           </ul>
         )}
         />
+        </ul>
         </div>
   </div>
     )  
