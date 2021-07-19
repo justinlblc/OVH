@@ -39,6 +39,9 @@ const Index = () => (
           <Img fixed={home.node.picture.localFile.childImageSharp.fixed}/>
             </div>
           <p>{home.node.content}</p>
+          <p>In order to have access to the whole content of our website, you can login to your
+          <Link to="/account/">account.</Link>
+          </p>
             </div>
         ))}
       </ul>
