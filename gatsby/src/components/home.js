@@ -22,11 +22,11 @@ const Home = () => {
     query={query}
     render={data => (
       <ul>
+        <header>
+            <h1>Here you will see a list of all the different categories of articles you have access to.</h1>
+        </header>
         {data.allStrapiCategory.edges.map(( category, i) => (
           <div>
-          <header>
-            <h1>Here you will see a list of all the different categories of articles you have access to.</h1>
-          </header>
           <div key={category.node.strapiId}>
             <p>{category.node.name}</p>
           </div>
