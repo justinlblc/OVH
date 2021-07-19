@@ -32,7 +32,7 @@ return (
             </header>
             <div>
                 <div>
-                    <Img fixed={strapiArticle.picture.localfile.childImageSharp.fixed}/>
+                    <Img fixed={data.strapiArticle.picture.localfile.childImageSharp.fixed}/>
                 </div>
                 <div>
                 <p>{data.strapiArticle.content} </p>
