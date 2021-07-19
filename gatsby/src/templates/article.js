@@ -12,8 +12,8 @@ const Article = () => {
             title
             picture {
                  localFile {
-                     childImageSharp {
-                        fixed(height: 125, width: 200){
+                    childImageSharp {
+                        fixed(height: 410, width: 1200){
                             ...GatsbyImageSharpFixed
                              }
                         }
@@ -32,7 +32,7 @@ return (
             </header>
             <div>
                 <div>
-                    <Img fixed={data.strapiArticle.picture.localfile.childImageSharp.fixed}/>
+                    <Img fixed={data.strapiArticle.picture.localFile.childImageSharp.fixed}/>
                 </div>
                 <div>
                 <p>{data.strapiArticle.content} </p>
