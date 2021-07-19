@@ -16,7 +16,7 @@ module.exports = {
       options: {
         apiURL: "https://backend.master-7rqtwti-zeguxhectgcvy.ovhcloud-fr-1.webpaas.ovh.net",
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`article`],
+        collectionTypes: [`article`, `category`],
         singleTypes: [`home`],
       },
     },

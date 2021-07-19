@@ -33,9 +33,9 @@ const Index = () => (
         {data.allStrapiHome.edges.map(home => (
           <div>
             <div>
-              <div>
+              <header>
           <h1>{home.node.title}</h1>
-              </div>
+              </header>
           <Img fixed={home.node.picture.localFile.childImageSharp.fixed}/>
             </div>
           <p>{home.node.content}</p>
