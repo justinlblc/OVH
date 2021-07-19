@@ -9,7 +9,6 @@ const query=graphql`
       node {
         strapiId
         title
-        publishedAt
         content
         picture {
           localFile {
@@ -40,7 +39,6 @@ const Index = () => (
           <Img fixed={home.node.picture.localFile.childImageSharp.fixed}/>
             </div>
           <p>{home.node.content}</p>
-          <p>{home.node.publishedAt}</p>
             </div>
         ))}
       </ul>
