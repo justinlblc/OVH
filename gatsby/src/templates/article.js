@@ -1,6 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Layout from "../components/layout"
 import Img from "gatsby-image"
 
 const Article = () => {
@@ -23,7 +22,6 @@ const Article = () => {
 }
 `
 return (
-    <Layout>
     <StaticQuery
     query={query}
     render={data => (
@@ -43,7 +41,6 @@ return (
         </ul>
     )}
     />
-     </Layout>
 )
 }
 export default Article
