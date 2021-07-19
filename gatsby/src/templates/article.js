@@ -4,24 +4,24 @@ import Img from "gatsby-image"
 
 const Article = () => {
     const query=graphql`
-    query ($id: Int!){
-        strapiArticle(id: {eq: "$id"}) {
-    strapiId
-    content
-    publishedAt
-    title
-    picture {
-      localFile {
-        childImageSharp {
-          fixed(height: 125, width: 200){
-          ...GatsbyImageSharpFixed
-          }
+    query {
+        strapiArticle {
+            strapiId
+            content
+            publishedAt
+            title
+            picture {
+                 localFile {
+                     childImageSharp {
+                        fixed(height: 125, width: 200){
+                            ...GatsbyImageSharpFixed
+                             }
+                        }
+                    }
+                }
+             }
         }
-      }
-    }
-  }
-}
-`
+    `  
 return (
     <StaticQuery
     query={query}
