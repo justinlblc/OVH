@@ -9,6 +9,8 @@ const query=graphql`
       node {
         strapiId
         title
+        publishedAt
+        content
         picture {
           localFile {
             childImageSharp {
@@ -32,10 +34,14 @@ const Index = () => (
         {data.allStrapiHome.edges.map(home => (
           <div>
             <div>
+              <div>
           <h1>{home.node.title}</h1>
-            </div>
+              </div>
           <Img fixed={home.node.picture.localFile.childImageSharp.fixed}/>
-          </div>
+            </div>
+          <p>{home.node.content}</p>
+          <p>{home.node.publishedAt}</p>
+            </div>
         ))}
       </ul>
     )}
