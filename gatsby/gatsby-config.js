@@ -22,7 +22,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/account/*`] },
+      options: { prefixes: [`/*`] },
     },
     `gatsby-plugin-image`,
     "gatsby-transformer-sharp",
