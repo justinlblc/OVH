@@ -10,15 +10,10 @@ const Account = () => {
       login()
       return <p>Redirecting to login...</p>
     }
-  
     return (
       <>
         <Layout>
         </Layout>
-        <Router>
-          <Home path="/account/" />
-          <Settings path="/account/settings" />
-        </Router>
       </>
     )
   }
