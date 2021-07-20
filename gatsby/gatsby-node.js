@@ -41,7 +41,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     }
     result.data.allStrapiArticle.edges.forEach(edge =>{
       createPage({
-        path: `/test`,
+        path: `/account/article/${edge.node.title}`,
         component: require.resolve("./src/templates/article.js"),
         context: {
           id: edge.node.strapiId,
