@@ -13,7 +13,7 @@ const Article = () => {
             picture {
                  localFile {
                     childImageSharp {
-                        fixed(height: 410, width: 1200){
+                        fixed(height: 125, width: 200){
                             ...GatsbyImageSharpFixed
                              }
                         }
