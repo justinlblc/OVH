@@ -2,21 +2,7 @@ import React from "react"
 import {Link, StaticQuery, graphql} from "gatsby"
 import {logout} from "../utils/auth"
 
-const Nav = () => {
-  const query = graphql`
-    query {
-      allStrapiArticle {
-        edges {
-          node {
-            strapiId
-            title
-          }
-        }
-      }
-    }
-  `
-
-    return (
+const Nav = () => (
     <div>
         <Link to="/account/">Home</Link>{" "}
         <Link to="/account/settings/">Settings</Link>{" "}
@@ -32,6 +18,5 @@ const Nav = () => {
        
   </div>
     )  
-}
 
 export default Nav
