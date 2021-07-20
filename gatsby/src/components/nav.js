@@ -4,9 +4,8 @@ import {logout} from "../utils/auth"
 
 const Nav = () => (
     <div>
-        <Link to="/account/">Account</Link>{" "}
-        <Link to="/settings/">Settings</Link>{" "}
-        <Link to ="/">Home</Link>
+        <Link to="/account/">Home</Link>{" "}
+        <Link to="/account/settings/">Settings</Link>{" "}
         <a
           href="#logout"
           onClick={e => {
@@ -16,6 +15,8 @@ const Nav = () => (
         >
           Log Out
         </a>
+        
+       
   </div>
     )  
 
