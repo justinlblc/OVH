@@ -33,29 +33,10 @@ const query=graphql`
 const Index = () => {
   if (!isAuthenticated()) {
     return (
-  <StaticQuery
-    query={query}
-    render={data => (
-      <ul>
-        {data.allStrapiHome.edges.map(home => (
-          <div>
-            <div>
-              <header>
-          <h1>{home.node.title}</h1>
-              </header>
-          <Img fixed={home.node.picture.localFile.childImageSharp.fixed}/>
-            </div>
-          <p>{home.node.content}</p>
-          <p>In order to have access to the whole content of our website, you can login to your {" "}
-          <Link to="/account/">account.</Link>
-          </p>
-            </div>
-        ))}
-      </ul>
+  <Home>
+
+  </Home>
     )}
-  />
-  )
-};
 return (
   <>
       <Layout>
