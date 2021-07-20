@@ -8,21 +8,11 @@ import Account from "../components/account"
 const Index = () => {
   if (!isAuthenticated()) {
     return (
-      <>
-  <Layout>
-    <Home />
-  </Layout>
-  </>
+     <p>hello</p>
     )}
 return (
   <>
-      <Layout>
-      </Layout>
-      <Router>
-        <Home path="/home/" />
-        <Settings path="/settings" />
-        <Account path="/account" />
-      </Router>
+      <p>not hello</p>
     </>
 )
 }
