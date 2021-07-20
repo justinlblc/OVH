@@ -19,5 +19,34 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       })
     }
   }
-
+  exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const result = await graphql(
+      `
+        query {
+          allStrapiArticle {
+            edges {
+              node {
+                title
+                strapiId
+              }
+            }
+          }
+        }
+      `
+    )
+  
+    if (result.errors) {
+      throw result.errors
+    }
+    result.data.allStrapiArticle.edges.forEach(edge =>{
+      createPage({
+        path: `/account/article/${edge.node.title}`,
+        component: require.resolve("./src/templates/article.js"),
+        context: {
+          id: edge.node.strapiId,
+      },
+    })
+  })
+  }
   
